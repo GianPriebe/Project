@@ -23,8 +23,8 @@ public class CartResource {
   }
 
   /**
-   * Metodo de requisicao do tipo GET, para uma lista
-   * @return lista de compras, filtrados ou nao
+   * GET, para uma lista
+   * @return lista de compras
    */
   @RequestMapping(value = "/compras/", method = RequestMethod.GET)
   public Iterable<Cart> buscarCompras() {
@@ -32,9 +32,9 @@ public class CartResource {
   }
 
   /**
-   * Metodo de requisicao do tipo GET, para um item
-   * @param id identificador ou indice da colecao das compras
-   * @return item de produto unico
+   * GET, para um item
+   * @param id identificador da colecao das compras
+   * @return item de produto unico, sendo procurado na lista pelo seu id
    */
   @RequestMapping(value = "/compras/{id}", method = RequestMethod.GET)
   public Optional<Cart> buscarCompra(@PathVariable Long id) {
@@ -42,8 +42,8 @@ public class CartResource {
   }
   
   /**
-   * Metodo de requisicao do tipo DELETE, para remover um item
-   * @param id identificador ou indice da colecao das compras
+   * DELETE, para remover um item
+   * @param id identificador da colecao das compras
    */
   @RequestMapping(value = "/compras/{id}", method = RequestMethod.DELETE)
   public void removerCompra(@PathVariable Long id) {
@@ -52,7 +52,7 @@ public class CartResource {
 
   @RequestMapping(value = "/compras/", 
   method = RequestMethod.POST)
-  public Cart criarCompra(@RequestBody Cart Cart) {
+  public Cart adicionarCompra(@RequestBody Cart Cart) {
     Product produto = Cart.getProduct();
     Customer cliente = Cart.getCustomer();
     return this.repository.save(new Cart(produto, cliente));

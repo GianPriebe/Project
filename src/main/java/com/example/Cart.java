@@ -37,28 +37,28 @@ public class Cart {
   }
 
   /**
-   * @return the customer
+   * @return o customer
    */
   public Customer getCustomer() {
     return customer;
   }
 
   /**
-   * @return the product
+   * @return o product
    */
   public Product getProduct() {
     return product;
   }
 
   /**
-   * @param customer the customer to set
+   * @param customer para set
    */
   public void setCustomer(Customer customer) {
     this.customer = customer;
   }
 
   /**
-   * @param product the product to set
+   * @param product para set
    */
   public void setProduct(Product product) {
     this.product = product;

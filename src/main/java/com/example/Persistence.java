@@ -48,7 +48,7 @@ public class Persistence {
     public String testConnection() throws Exception {
       StringBuilder str = new StringBuilder();
       Statement stmt = this.conn.createStatement();
-      ResultSet result = stmt.executeQuery("SELECT * FROM JOGADOR");
+      ResultSet result = stmt.executeQuery("SELECT * FROM CUSTOMER");
       while(result.next()) {
         str.append(result.getString("Nome") + "\n");
         str.append(result.getString("Idade") + "\n");
