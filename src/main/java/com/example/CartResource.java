@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-// import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class CartResource {
@@ -16,7 +15,7 @@ public class CartResource {
   @Autowired
   private CartRepository repository;
   /*
-   * Construtor do CartResource, preparando uma lista de compras
+   * Construtor do CartResource, lista de compras
    */
   public CartResource(CartRepository repository) {
     this.repository = repository;
@@ -33,7 +32,7 @@ public class CartResource {
 
   /**
    * GET, para um item
-   * @param id identificador da colecao das compras
+   * @param id identificador das compras
    * @return item de produto unico, sendo procurado na lista pelo seu id
    */
   @RequestMapping(value = "/compras/{id}", method = RequestMethod.GET)
@@ -43,11 +42,20 @@ public class CartResource {
   
   /**
    * DELETE, para remover um item
-   * @param id identificador da colecao das compras
+   * @param id identificador das compras
    */
   @RequestMapping(value = "/compras/{id}", method = RequestMethod.DELETE)
   public void removerCompra(@PathVariable Long id) {
     this.repository.deleteById(id);
+  }
+
+  /**
+   * DELETE, para remover todos itens
+   * @param id identificador das compras
+   */
+  @RequestMapping(value = "/compras", method = RequestMethod.DELETE)
+  public void removerTodasCompras() {
+    this.repository.deleteAll();
   }
 
   @RequestMapping(value = "/compras/", 

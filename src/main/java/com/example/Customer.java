@@ -40,13 +40,13 @@ public class Customer {
     return lastName;
   }
   /**
-   * @param firstName the firstName to set
+   * @param firstName o primeiro nome para set
    */
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
   /**
-   * @param lastName the lastName to set
+   * @param lastName o ultimo nome para set
    */
   public void setLastName(String lastName) {
     this.lastName = lastName;

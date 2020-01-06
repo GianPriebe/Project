@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-// import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class CustomerResource {
@@ -16,15 +15,15 @@ public class CustomerResource {
   @Autowired
   private CustomerRepository repository;
   /*
-   * Construtor do CustomerResource, preparando uma lista de clientes
+   * Construtor do CustomerResource, lista de clientes
    */
   public CustomerResource(CustomerRepository repository) {
     this.repository = repository;
   }
 
   /**
-   * Metodo de requisicao do tipo GET, para uma lista
-   * @return lista de clientes, filtrados ou nao
+   *GET, para uma lista
+   * @return lista de clientes
    */
   @RequestMapping(value = "/clientes/", method = RequestMethod.GET)
   public Iterable<Customer> buscarProdutos() {
@@ -32,8 +31,8 @@ public class CustomerResource {
   }
 
   /**
-   * Metodo de requisicao do tipo GET, para um item
-   * @param id identificador ou indice da colecao dos clientes
+   *GET, para um item
+   * @param id identificador de clientes
    * @return item de produto unico
    */
   @RequestMapping(value = "/clientes/{id}", method = RequestMethod.GET)
@@ -42,8 +41,8 @@ public class CustomerResource {
   }
   
   /**
-   * Metodo de requisicao do tipo DELETE, para remover um item
-   * @param id identificador ou indice da colecao dos clientes
+   *DELETE, para remover um item
+   * @param id identificador de clientes
    */
   @RequestMapping(value = "/clientes/{id}", method = RequestMethod.DELETE)
   public void removerCliente(@PathVariable Long id) {
