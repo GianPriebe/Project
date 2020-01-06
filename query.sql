@@ -14,7 +14,7 @@ PRIMARY KEY(Id),
 -- Limpar a estrutura da tabela Jogador se existir.
 DROP TABLE IF EXISTS Jogador;
 
--- Cria uma tabela de nome Jogador com as colunas Id (chave primária),
+-- Cria uma tabela de nome gJogador com as colunas Id (chave primária),
 -- Nome (cadeia de caracteres - string), Idade (inteiro), Ativo (booleano), Nascimento (data),
 -- idClube (chave estrangeira, referenciando o Id de Clube).
 CREATE TABLE Jogador(
